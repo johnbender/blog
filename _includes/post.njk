@@ -1,7 +1,9 @@
+{% if page.url == '/' %}
+<h1 class="homepost">{{ title }}</h1>
+{% else %}
 <h1>{{ title }}</h1>
+{% endif %}
 
-<div class="content">
+<div class="content {% if page.url == '/' %}homepost{% endif %}">
 {{ content | safe }}
 </div>
-
-<p><a href="{{ '/' | url }}">← Home</a></p>

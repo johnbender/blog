@@ -3,8 +3,7 @@ layout: post
 title: "Differential Semantics"
 tags:
 - presentation
-- sql
-- math
+- semantics
 status: publish
 type: post
 published: true

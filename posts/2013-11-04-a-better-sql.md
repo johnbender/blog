@@ -2,6 +2,7 @@
 layout: post
 title: "A Better SQL"
 tags:
+- semantics
 - sql
 status: published
 type: post

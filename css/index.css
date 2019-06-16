@@ -27,6 +27,7 @@ p,
 img, div.content {
   max-width: 37.5em; /* 600px /16 */
 }
+
 p,
 .tmpl-post li {
   line-height: 1.45;
@@ -37,8 +38,15 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
+
 main {
   padding: 1rem;
+}
+
+header, main {
+  max-width: 44em;
+  margin-left: auto;
+  margin-right: auto;
 }
 main :first-child {
   margin-top: 0;
@@ -148,18 +156,20 @@ pre {
 
 /* Posts list */
 .postlist {
-  list-style: none;
+  /* list-style: none; */
   padding: 0;
+  margin-left: 1.1em;
 }
 .postlist-item {
-  counter-increment: start-from -1;
+    margin-bottom: 5px;
 }
 .postlist-item:before {
   display: inline-block;
   pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
   line-height: 100%;
   text-align: right;
+  counter-increment: post;
+  /* content: "" counter(post, decimal-leading-zero) ": "; */
 }
 .postlist-date,
 .postlist-item:before {
@@ -176,11 +186,45 @@ pre {
 .postlist-item-active .postlist-link {
   font-weight: bold;
 }
-.tmpl-home .postlist-link {
+
+.postlist-link {
   font-size: 1.1875em; /* 19px /16 */
-  font-weight: 700;
+  font-weight: 600;
 }
 
+.postlist-metadata {
+  display: block;
+  margin-left: 2px;
+}
+
+@media(max-width: 37.5em){
+  .postlist-metadata {
+    display: block;
+  }
+
+  .postlist-item:before {
+    display: none;
+  }
+
+  .postlist-link {
+    padding-left: 0;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;      
+  }
+}
 
 /* Tags */
 .tag {
@@ -225,4 +269,16 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+div.content img {
+  margin: 1em 0;
+}
+
+h1.homepost {
+  margin-top: 2em;
+}
+
+div.content.homepost {
+  margin-bottom: 8em;
 }

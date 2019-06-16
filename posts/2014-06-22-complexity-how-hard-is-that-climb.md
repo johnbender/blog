@@ -2,7 +2,7 @@
 layout: post
 title: "NP-complete: how hard is that climb?"
 tags:
-- math
+- complexity
 status: draft
 type: post
 published: true
@@ -23,11 +23,11 @@ All we really know about mountains **X** and **Y** is that **X** is at least as 
 
 <image of mountains, one really small and one really huge and gnarly (looks the same as Y from the first image>
 
-Lets call these two classes of mountains **D** and **WD**, for "Day" and "Weeks and Days". When a mountain will take at least a day to hike we say it's **D**-hard. When it will take at fdleast weeks and days to hike then we say it's **WD**-hard. So if mountain **Y** is **D**-hard then clearly mountain **X** is at least **D**-hard and similarly so if **Y** is **WD**-hard.
+Lets call these two classes of mountains **D** and **WD**, for "Day" and "Weeks and Days". When a mountain will take at least a day to hike we say it's **D**-hard. When it will take at least weeks and days to hike then we say it's **WD**-hard. So if mountain **Y** is **D**-hard then clearly mountain **X** is at least **D**-hard and similarly so if **Y** is **WD**-hard.
 
-Lets assume that **Y** is "Weeks and Days"-hard, and that means we know that **X** is too because it's at least as big as **Y**. But there's still a problem, we don't know *exactly* how big mountain **X** is because the top is obscured by clouds. We only know that it's as hard as **Y** to climb. If **X** ends up being as tall as Olympus Mons we should probably just forget it. So, on a clear day when the top of mountain **X** is visible and comparable to the top of mountain **Y** you take a look and verify that mountain **X** is roughly the same size as mountain **Y**. Now we say that mountain **X** is **WD**-complete. That is, we know it's at least as hard as another "Weeks and Days" mountain and we feel confident that it will *only* take weeks and days and not, for instance, months and years.
+Lets assume that **Y** is "Weeks and Days"-hard, and that means we know that **X** is too because it's at least as big as **Y**. But there's still a problem, we don't know *exactly* how big mountain **X** is since the top is obscured by clouds. We only know that it's as as least as hard as **Y** to climb. If **X** ends up being as tall as Olympus Mons we should probably just forget it. So, on a clear day when the top of mountain **X** is visible and comparable to the top of mountain **Y** you take a look and verify that mountain **X** is roughly the same size as mountain **Y**. Now we say that mountain **X** is **WD**-complete. That is, we know it's at least as hard as another "Weeks and Days" mountain and we feel confident that it will *only* take weeks and days and not, for instance, months and years.
 
-<image of X being only slightly bigger than Y>
+< image of X being only slightly bigger than Y>
 
 This is really great for a couple of reasons. First, we have enough information to start planning a trip to the top of mountain **X**. Second, because we've classified mountain **X** as being both **WD**-hard and "in" the class of **WD** mountains it stands as an exemplar of that class of mountain, which means we can use it to classify other mountains, in the same way we did with mountain **Y**.
 

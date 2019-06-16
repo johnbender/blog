@@ -28,6 +28,12 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  eleventyConfig.addFilter("nonDraft", (array) => {
+    return array.filter((obj) => {
+      return obj.data.status !== "draft"
+    })
+  });
+
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('objectProps', (obj) => {
     var string = "";
@@ -42,6 +48,10 @@ module.exports = function(eleventyConfig) {
 
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+
+  eleventyConfig.addCollection("research", function(collection) {
+    return collection.getFilteredByGlob("research/*.md");
+  });
 
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
