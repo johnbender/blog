@@ -28,6 +28,19 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  eleventyConfig.addFilter('objectProps', (obj) => {
+    var string = "";
+    for(key in obj){
+      if(obj.hasOwnProperty(key)){
+        string = string + key + " ";
+      }
+    }
+
+    return string;
+  });
+
+
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
   eleventyConfig.addPassthroughCopy("img");

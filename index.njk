@@ -11,3 +11,8 @@ navtitle: Home
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+
+{% set post = collections.posts | last %}
+{% set title = post.data.title %}
+{% set content = post.templateContent %}
+{% include "post.njk" %}

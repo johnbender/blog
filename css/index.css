@@ -24,7 +24,7 @@ p:last-child {
 }
 p,
 .tmpl-post li,
-img {
+img, div.content {
   max-width: 37.5em; /* 600px /16 */
 }
 p,
@@ -45,6 +45,7 @@ main :first-child {
 }
 header {
   border-bottom: 1px dashed var(--lightgray);
+  padding-bottom: 1rem;
 }
 header:after {
   content: "";
@@ -118,7 +119,7 @@ pre {
 .home {
   padding: 0 1rem;
   float: left;
-  margin: 1rem 0; /* 16px /16 */
+  margin: 1rem 0 0 0; /* 16px /16 */
   font-size: 1em; /* 16px /16 */
 }
 .home :link:not(:hover) {
@@ -131,6 +132,7 @@ pre {
   list-style: none;
   float: left;
   margin-left: 1em;
+  margin-bottom: 0;
 }
 .nav-item {
   display: inline-block;
