@@ -1,4 +1,6 @@
 :root {
+  --lightblue: #2b93ff;
+  --orange: #ffb42b;
   --red: #C5004A;
   --darkred: #7F0036;
   --lightgray: #e0e0e0;
@@ -25,7 +27,7 @@ p:last-child {
 p,
 .tmpl-post li,
 img, div.content {
-  max-width: 37.5em; /* 600px /16 */
+  max-width: 40em; /* 600px /16 */
 }
 
 p,
@@ -44,7 +46,7 @@ main {
 }
 
 header, main {
-  max-width: 44em;
+  max-width: 42em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -197,35 +199,6 @@ pre {
   margin-left: 2px;
 }
 
-@media(max-width: 37.5em){
-  .postlist-metadata {
-    display: block;
-  }
-
-  .postlist-item:before {
-    display: none;
-  }
-
-  .postlist-link {
-    padding-left: 0;
-    /* These are technically the same, but use both */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-
-    -ms-word-break: break-all;
-    /* This is the dangerous one in WebKit, as it breaks things wherever */
-    word-break: break-all;
-    /* Instead use this non-standard one: */
-    word-break: break-word;
-
-    /* Adds a hyphen where the word breaks, if supported (No Blink) */
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;      
-  }
-}
-
 /* Tags */
 .tag {
   display: inline-block;
@@ -234,7 +207,7 @@ pre {
   font-size: 0.625em; /* 10px /16 */
   padding: 2px 4px;
   margin-left: 0.8em; /* 8px /10 */
-  background-color: var(--red);
+  background-color: var(--lightblue);
   color: var(--white);
   border-radius: 0.25em; /* 3px /12 */
   text-decoration: none;
@@ -276,9 +249,56 @@ div.content img {
 }
 
 h1.homepost {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 div.content.homepost {
   margin-bottom: 8em;
 }
+
+img.pinned {
+  width: 0.7em;
+  float: left;
+  margin-left: -43px;
+  margin-right: 10px;
+  margin-top: 0.2em;
+}
+
+@media(max-width: 45em){
+  img.pinned {
+    float: right;
+  }
+}
+
+@media(max-width: 40em){
+  .postlist-metadata {
+    display: block;
+  }
+
+  .postlist-item:before {
+    display: none;
+  }
+
+  .postlist-link {
+    padding-left: 0;
+  }
+
+  a {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;      
+  }
+}
+

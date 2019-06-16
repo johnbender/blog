@@ -11,6 +11,7 @@ listed: true
 vote: https://news.ycombinator.com/item?id=6670048
 ---
 
+
 The relational model for data is ubiquitous. That's in part due to SQL's declarative approach to manipulating and exploring data stored as relations. Unfortunately SQL has its warts. In particular schema changes made in the data definition subset of the language (DDL) [1] can be awkward for creating idempotent migrations. Enough so, that the responsibility is frequently delegated to the application layer where more expressive languages can be employed. Here I'll lay out an alternate semantics for SQL DDL that embraces schema change and expands the expressive power of DDL's declarative core.
 
 ## A Common Activity
@@ -104,6 +105,4 @@ Broadly, the idea of differential semantics is to gather more information about 
 2. In our example a drop would be accomplished by removing the table definition completely.
 3. The mapping presumes feature parity in the create with the alter statements, but in my study of the standard and Postgres' implementation this appears to be the case.
 4. There's a lot of interesting work and tooling around preventing issues resulting from schema migrations: [schema evolution](http://scholar.google.com/scholar?q=prism+schema+evolution&btnG=&hl=en&as_sdt=0%2C5).
-5. A denotational semantics for both the current DDL semantics and the proposed semantics. Note that in the proposed section the "differential" semantics eval function is parameterized by the state of the syntax.
-
-<script async class="speakerdeck-embed" data-id="04706730a1090131ed084e04b85186c1" data-ratio="0.772830188679245" src="//speakerdeck.com/assets/embed.js"></script>
+5. A denotational semantics for both the current DDL semantics and the proposed semantics. Note that in the proposed section the "differential" semantics eval function is parameterized by the state of the syntax: [PDF](https://speakerdeck.com/johnbender/sql-ddl-differential-semantics)

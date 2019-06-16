@@ -3,10 +3,8 @@ layout: post
 title: "NP-complete: how hard is that climb?"
 tags:
 - complexity
-status: draft
+- pinned
 type: post
-published: true
-listed: false
 ---
 
 The purpose of this post is to clarify the difference between **NP**-hard and **NP**-complete problems for developers who, like me, have found that the abstract nature of the definitions make developing an intuition for it difficult.
@@ -17,17 +15,17 @@ Imagine that a friend came to you and said that she would like you plan a trip u
 
 Further, imagine that you are unable to find any information about the difficulty of climbing up mountain **X**! Your intuitive reaction would probably be to find *comparable* mountains to get a sense for the difficulty of mountain **X** using some sort of comparison. Fortunately, right near by there is a mountain **Y** that is well known. In fact it's close enough that a comparison by height (which we'll use as our proxy for difficulty) is possible save for that fact that peak of mountain **X** is constantly covered by clouds.
 
-<image of mountains, top of Y below the clouds covering the top of X>
+![X mountain obscured](/img/complexity/x-obscured.png)
 
 All we really know about mountains **X** and **Y** is that **X** is at least as tall as **Y** and therefore at least as difficult. We need to get some sense for how difficult mountain **Y** is so that we can then infer something useful about mountain **X**. Since we're using vision as our measuring device our system of classification is going to be fairly coarse. That is, if we're positive a mountain can be scaled in a day (think, large hill) then it's probably visually pretty small and if it's going to be on the order of a few weeks then it probably looks pretty serious (think, K2).
 
-<image of mountains, one really small and one really huge and gnarly (looks the same as Y from the first image>
+![Days vs Weeks and Days](/img/complexity/d-vs-wd.png)
 
 Lets call these two classes of mountains **D** and **WD**, for "Day" and "Weeks and Days". When a mountain will take at least a day to hike we say it's **D**-hard. When it will take at least weeks and days to hike then we say it's **WD**-hard. So if mountain **Y** is **D**-hard then clearly mountain **X** is at least **D**-hard and similarly so if **Y** is **WD**-hard.
 
 Lets assume that **Y** is "Weeks and Days"-hard, and that means we know that **X** is too because it's at least as big as **Y**. But there's still a problem, we don't know *exactly* how big mountain **X** is since the top is obscured by clouds. We only know that it's as as least as hard as **Y** to climb. If **X** ends up being as tall as Olympus Mons we should probably just forget it. So, on a clear day when the top of mountain **X** is visible and comparable to the top of mountain **Y** you take a look and verify that mountain **X** is roughly the same size as mountain **Y**. Now we say that mountain **X** is **WD**-complete. That is, we know it's at least as hard as another "Weeks and Days" mountain and we feel confident that it will *only* take weeks and days and not, for instance, months and years.
 
-< image of X being only slightly bigger than Y>
+![X visible](/img/complexity/x-visible.png)
 
 This is really great for a couple of reasons. First, we have enough information to start planning a trip to the top of mountain **X**. Second, because we've classified mountain **X** as being both **WD**-hard and "in" the class of **WD** mountains it stands as an exemplar of that class of mountain, which means we can use it to classify other mountains, in the same way we did with mountain **Y**.
 
@@ -79,11 +77,11 @@ Understanding this is absolutely essential to understanding what it means for a 
 
 Leaving aside the normal lateral distance  it's definitely the case that the bridge should only take days to hike, otherwise in the process of crossing the bridge you might end up climbing a different class of mountain! This corresponds to the requirement that our reduction between problems should take polynomial time.
 
-<illustration of mountain with day bridge hanging down the side>
+![X mountain obscured](/img/complexity/d-bridge-wd-mountain.png)
 
 This is important because if you could devise some special bridge (teleporter?) that allowed you to cross from the top of a weeks and days mountain to the top of a day trip mountain in the length of a day trip, you'd have a way to scale that weeks and days mountain in about a day by climbing the day trip mountain and then taking the bridge.
 
-<illustration of two day trip bridges to top of Y>
+![X mountain obscured](/img/complexity/d-hike-d-bridge.png)
 
 In essence you will have shrunk the bigger mountain! Further, if you have "day trip bridges" between that first big mountain and other big mountains then you could get to the top of any them with a relatively short trip. The hiking world would be changed forever [5].
 
@@ -98,7 +96,8 @@ In the same way, if you can come up with a polynomial time reduction to some pro
 
 It's also important to note that if we want to get an understanding for how difficult mountains are the bridges must be from tops to tops. That is, you could build a day bridge from the top of a day mountain to the *side* of a much bigger mountain but that wouldn't tell you a whole lot about the much bigger mountain.
 
-<insert image of small mountain and bridge to the side of Y>
+![X mountain obscured](/img/complexity/d-bridge-to-nowhere.png)
+
 
 Similarly you can reduce from polynomial time problems to **NP**-hard problems but it's not going to mean a whole lot, which is why we reduce *from* problems known to be **NP**-hard and in **NP** [6].
 

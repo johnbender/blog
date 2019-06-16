@@ -5,12 +5,14 @@ module.exports = function(collection) {
       let tags = item.data.tags;
 
       tags = tags.filter(function(item) {
+        // this list should match the `filter` list in tags.njk
         switch(item) {
-          // this list should match the `filter` list in tags.njk
-          case "all":
-          case "nav":
-          case "post":
-          case "posts":
+        case "all":
+        case "nav":
+        case "post":
+        case "posts":
+        case "pinned":
+        case "draft":
             return false;
         }
 

@@ -3,7 +3,7 @@ layout: post
 title: A Formalization of Java's Concurrent Access Modes
 tags:
   - OOPSLA '19
-status: draft
+  - draft
 date: 2019-10-20
 ---
 

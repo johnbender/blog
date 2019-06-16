@@ -28,13 +28,18 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
-  eleventyConfig.addFilter("nonDraft", (array) => {
-    return array.filter((obj) => {
-      return obj.data.status !== "draft"
-    })
-  });
+  function tagRemove(posts, tag, invert){
+    return posts.filter((obj) => obj.data.tags.indexOf("draft") == -1);
+  }
 
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  function tagKeep(posts, tag){
+    return posts.filter((obj) => obj.data.tags.indexOf(tag) > -1);
+  }
+
+  eleventyConfig.addFilter("nonDraft", (array) => tagRemove(array, "draft"));
+  eleventyConfig.addFilter("pinned", (array) => tagKeep(array, "pinned"));
+
+  // debugging
   eleventyConfig.addFilter('objectProps', (obj) => {
     var string = "";
     for(key in obj){
@@ -46,6 +51,22 @@ module.exports = function(eleventyConfig) {
     return string;
   });
 
+  eleventyConfig.addFilter('contentTags', (tags) => {
+    return tags.filter(function(item) {
+      // this list should match the `filter` list in tags.njk
+      switch(item) {
+      case "all":
+      case "nav":
+      case "post":
+      case "posts":
+      case "pinned":
+      case "draft":
+        return false;
+      }
+
+      return true;
+    });
+  });
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
