@@ -246,6 +246,7 @@ a[href].direct-link:focus:visited,
 
 div.content img {
   margin: 1em 0;
+  max-width: 100%;
 }
 
 h1.homepost {
@@ -266,7 +267,7 @@ img.pinned {
 
 @media(max-width: 45em){
   img.pinned {
-    float: right;
+    display: none;
   }
 }
 
@@ -298,7 +299,7 @@ img.pinned {
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
-    hyphens: auto;      
+    hyphens: auto;
   }
 }
 
