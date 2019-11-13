@@ -10,7 +10,9 @@ navtitle: Home
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
 
-{% set post = collections.posts | nonDraft | pinned | first %}
-{% set title = post.data.title %}
-{% set content = post.templateContent %}
-{% include "post.njk" %}
+{% set posts = collections.posts | nonDraft | pinned | reverse %}
+{% for post in posts %}
+  {% set title = post.data.title %}
+  {% set content = post.templateContent %}
+  {% include "post.njk" %}
+{% endfor %}
