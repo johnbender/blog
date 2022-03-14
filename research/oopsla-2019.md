@@ -2,8 +2,11 @@
 layout: post
 title: A Formalization of Java's Concurrent Access Modes
 tags:
-  - OOPSLA '19
+  - OOPSLA
 date: 2019-10-20
+authors:
+  - John Bender
+  - Jens Palsberg
 ---
 
 Java’s memory model was recently updated and expanded with new access modes. The
@@ -26,4 +29,3 @@ any program.
 
 - [Preprint](/assets/oopsla-2019.pdf) (accepted)
 - [Project: Herd and Coq formalizations](https://bitbucket.org/ucla-pls/jam)
-
