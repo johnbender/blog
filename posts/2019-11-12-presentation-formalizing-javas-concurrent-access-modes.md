@@ -3,7 +3,7 @@ layout: post
 title: "Formalizing Java's Access Modes"
 tags:
 - presentation
-- OOPSLA '19
+- OOPSLA
 - pinned
 status: publish
 type: post

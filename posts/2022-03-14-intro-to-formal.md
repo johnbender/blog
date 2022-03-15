@@ -4,7 +4,6 @@ title: "An Introduction to Formal Methods"
 tags:
 - research
 - presentation
-- UCLA
 - pinned
 status: publish
 type: post
